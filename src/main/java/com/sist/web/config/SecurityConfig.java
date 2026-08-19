@@ -91,16 +91,16 @@ public class SecurityConfig {
 						.failureHandler(loginFailHandler)
 						.permitAll()
 					)
-			.rememberMe(remember -> remember
-						.key("my-secret-key")
-						.rememberMeParameter("remember-me")
-						.tokenValiditySeconds(60*60*24)
-					)
+//			.rememberMe(remember -> remember
+//						.key("my-secret-key")
+//						.rememberMeParameter("remember-me")
+//						.tokenValiditySeconds(60*60*24)
+//					)
 			.logout(logout -> logout
 						.logoutUrl("/member/logout")
 						.logoutSuccessUrl("/")
 						.invalidateHttpSession(true)
-						.deleteCookies("remember-me","JSESSIONID")
+						//.deleteCookies("remember-me","JSESSIONID")
 					);
 		
 		// remember-me
@@ -119,28 +119,28 @@ public class SecurityConfig {
 	 * 	
 	 */
 	// 인증 관리자
-	@Bean
-	public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPasswordEncoder passwordEncoder) throws Exception
-	{
-		return null;
-	}
-	
-	@Bean
-	public JdbcUserDetailsManager jdbcUserDetailsService()
-	{
-		return null;
-	}
-	// 비밀번호 암호화
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder()
-	{
-		return new BCryptPasswordEncoder();
-	}
-	
-	// PersistentLogins 등록
-	@Bean
-	public PersistentTokenRepository persistentTokenRepository()
-	{
-		return null;
-	}
+//	@Bean
+//	public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPasswordEncoder passwordEncoder) throws Exception
+//	{
+//		return null;
+//	}
+//	
+//	@Bean
+//	public JdbcUserDetailsManager jdbcUserDetailsService()
+//	{
+//		return null;
+//	}
+//	// 비밀번호 암호화
+//	@Bean
+//	public BCryptPasswordEncoder passwordEncoder()
+//	{
+//		return new BCryptPasswordEncoder();
+//	}
+//	
+//	// PersistentLogins 등록
+//	@Bean
+//	public PersistentTokenRepository persistentTokenRepository()
+//	{
+//		return null;
+//	}
 }
